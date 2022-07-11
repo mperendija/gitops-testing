@@ -19,6 +19,10 @@ spec:
       name: '{{path.basename}}'
     spec:
       project: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
       source:
         # source repo, in this example both repositories are the same
         repoURL: https://github.com/mperendija/gitops-testing.git
