@@ -1,4 +1,4 @@
 testmap:
-  testprop: CHARTWORKS
+  testprop: CHARTWORKS_OVERRIDEN
 
 namespace: zr
