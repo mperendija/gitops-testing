@@ -12,7 +12,7 @@ spec:
       revision: HEAD
       directories:
       # path to the directory that includes directories to read as variables
-      - path: tenants/*
+      - path: tenants-helm/*
   template:
     metadata:
       # basename is the name of the directory not the full path
@@ -28,7 +28,10 @@ spec:
         repoURL: https://github.com/mperendija/gitops-testing.git
         targetRevision: HEAD
         # path to read manifests from, here it's the full path not only the name of the directory
-        path: '{{path}}'
+        path: '{{path}}../../tenant-helm/'
+        helm:
+          valueFiles:
+            - '{{path}}../../tenant-helm/values.yaml'
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
