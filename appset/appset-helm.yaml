@@ -30,6 +30,7 @@ spec:
         # path to read manifests from, here it's the full path not only the name of the directory
         path: '{{path}}'
         helm:
+          ignoreMissingValueFiles: true
           valueFiles:
             - 'tenant-helm/values.yaml'
             - '{{path}}/values-over.yaml'
