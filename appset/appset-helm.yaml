@@ -28,7 +28,7 @@ spec:
         repoURL: https://github.com/mperendija/gitops-testing.git
         targetRevision: HEAD
         # path to read manifests from, here it's the full path not only the name of the directory
-        path: 'tenants-helm'
+        path: 'tenant-helm'
         helm:
           valueFiles:
             - 'tenant-helm/values.yaml'
