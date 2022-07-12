@@ -29,6 +29,8 @@ spec:
         targetRevision: HEAD
         # path to read manifests from, here it's the full path not only the name of the directory
         path: '{{path}}'
+        plugin:
+          name: kustomize-build-with-helm
         # helm:
         #   ignoreMissingValueFiles: true
         #   valueFiles:
