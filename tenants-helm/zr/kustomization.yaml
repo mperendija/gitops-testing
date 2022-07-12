@@ -4,8 +4,8 @@ kind: Kustomization
 helmGlobals:
   chartHome: ../../
 helmCharts:
-- name: testchart
-  version: 0.1.0
+  - name: testchart
+    version: 0.1.0
 
 resources:
   - ../../tenant-helm
