@@ -4,3 +4,4 @@ metadata:
   name: test-configmap
 data:
   database: test
+  all: 'true'
