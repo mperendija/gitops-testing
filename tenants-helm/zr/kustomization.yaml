@@ -1,5 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+helmGlobals:
+  chartHome: ../../tenant-helm
 helmCharts:
 - name: testchart
   version: 0.1.0
