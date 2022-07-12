@@ -3,7 +3,6 @@ kind: Kustomization
 helmCharts:
 - name: testchart
   version: 0.1.0
-  repo: https://github.com/mperendija/gitops-testing/tenant-helm
 resources:
   - ../../tenant-helm
 
