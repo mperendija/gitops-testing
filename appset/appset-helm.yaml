@@ -17,7 +17,6 @@ spec:
     metadata:
       # basename is the name of the directory not the full path
       name: '{{path.basename}}'
-      label: test
     spec:
       project: default
       syncPolicy:
