@@ -33,8 +33,8 @@ spec:
         #   name: kustomize-build-with-helm
         helm:
           valueFiles:
-            - 'values.yaml'
-            - '{{path[1]/path[2]}}/values-over.yaml'
+            - "values.yaml"
+            - "{{path[2]}}/{{path.basename}}/values-over.yaml"
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
