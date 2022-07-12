@@ -28,11 +28,11 @@ spec:
         repoURL: https://github.com/mperendija/gitops-testing.git
         targetRevision: HEAD
         # path to read manifests from, here it's the full path not only the name of the directory
+        path: '{{path}}'
         helm:
           valueFiles:
-            - 'values.yaml'
+            - 'tenant-helm/values.yaml'
             - '{{path}}/values-over.yaml'
-        path: 'tenant-helm'
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
