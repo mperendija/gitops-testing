@@ -34,7 +34,7 @@ spec:
         helm:
           valueFiles:
             - "values.yaml"
-            - "{{path[2]}}/{{path.basename}}/values-over.yaml"
+            - "../{{path[1]}}/{{path.basename}}/values-over.yaml"
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
