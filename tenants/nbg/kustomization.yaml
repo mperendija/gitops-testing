@@ -11,3 +11,4 @@ configMapGenerator:
     literals:
       - database=nbg
       - newenv=works
+      - jos=jedan
