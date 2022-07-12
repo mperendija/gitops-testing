@@ -31,7 +31,7 @@ spec:
         path: 'tenant-helm'
         helm:
           valueFiles:
-            - 'tenant-helm/values.yaml'
+            - 'values.yaml'
             - '{{path}}/values-over.yaml'
       destination:
         server: https://kubernetes.default.svc
