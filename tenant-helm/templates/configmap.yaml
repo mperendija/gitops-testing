@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: helmconfmap
+  namespace: defns
+data:
+  testprop: {{ .Values.testmap.testprop }}
+
