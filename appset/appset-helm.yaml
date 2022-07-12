@@ -32,7 +32,6 @@ spec:
         # plugin:
         #   name: kustomize-build-with-helm
         helm:
-          ignoreMissingValueFiles: true
           valueFiles:
             - 'tenant-helm/values.yaml'
             - '{{path}}/values-over.yaml'
