@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: 'project-{{projectId}}'
+      name: 'applicationset-{{alias}}'
     spec:
       project: default
       syncPolicy:
