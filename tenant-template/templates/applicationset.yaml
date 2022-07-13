@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: wcc-emp-project-applicationset-{{ .Values.alias }}
+  name: wcc-emp-project-applicationset-{{ .Values.namespace }}
   namespace: argocd
 spec:
   generators:
@@ -12,7 +12,7 @@ spec:
         revision: tenant-projects-test
         files:
           # path to the directory that includes directories to read as variables
-          - path: tenants/{{ .Values.alias }}/**/config-project.json
+          - path: tenants/{{ .Values.namespace }}/**/config-project.json
   template:
     metadata:
       # basename is the name of the directory not the full path
