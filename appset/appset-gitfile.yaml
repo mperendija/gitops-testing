@@ -10,7 +10,7 @@ spec:
       repoURL: https://github.com/mperendija/gitops-testing.git
       # branch used to get the variables from 
       revision: HEAD
-      directories:
+      files:
       # path to the directory that includes directories to read as variables
       - path: tenants-gitfile/**/config.json
   template:
