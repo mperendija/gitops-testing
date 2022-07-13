@@ -1,0 +1,7 @@
+{
+	"alias": "tenant1",
+	"name": "project-1",
+	"type": "dedupe",
+	"templatePath": "project-template/dedupe",
+	"valuesFile": "../../tenants/tenant1/project-1/values-over.yaml"
+}

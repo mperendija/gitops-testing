@@ -1,0 +1,7 @@
+{
+	"alias": "tenant1",
+	"name": "project-2",
+	"type": "ep",
+	"templatePath": "project-template/ep",
+	"valuesFile": "../../tenants/tenant1/project-2/values-over.yaml"
+}

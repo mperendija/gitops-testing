@@ -1,0 +1,5 @@
+namespace: tenant1
+name: project-1
+
+testmap:
+  testprop: CHARTWORKS_tenant1-project-1

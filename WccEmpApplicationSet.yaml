@@ -1,22 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: gitfile-appset
+  name: wcc-emp-applicationSet
   namespace: argocd
 spec:
   generators:
   - git:
       # git repository to get the variables from
       repoURL: https://github.com/mperendija/gitops-testing.git
-      # branch used to get the variables from 
-      revision: HEAD
+      # branch used to get the variables from
+      revision: tenant-projects-test
       files:
       # path to the directory that includes directories to read as variables
-      - path: tenants-gitfile/**/config.json
+      - path: tenants/**/config-tenant.json
+      - path: tenants/**/**/config-project.json
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: '{{tenantId}}'
+      name: '{{name}}'
     spec:
       project: default
       syncPolicy:
@@ -26,16 +27,18 @@ spec:
       source:
         # source repo, in this example both repositories are the same
         repoURL: https://github.com/mperendija/gitops-testing.git
-        targetRevision: HEAD
+        targetRevision: tenant-projects-test
         # path to read manifests from, here it's the full path not only the name of the directory
-        path: '{{appPath}}'
+        path: '{{templatePath}}'
         # plugin:
         #   name: kustomize-build-with-helm
         helm:
           valueFiles:
             - "values.yaml"
-            - "../../tenants-gitfile/{{tenantId}}/values-over.yaml"
+            - "{{valuesFile}}"
+#            - "../tenants/{{alias}}/values-over.yaml"
+#            - "../tenants/{{alias}}/project-{{projectId}}/values-over.yaml"
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
-        namespace: '{{tenantId}}'
+        namespace: '{{alias}}'
