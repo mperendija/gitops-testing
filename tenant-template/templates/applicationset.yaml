@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: 'applicationset-project-{{ .Values.temp | default "{{projectId}}" }}'
+      name: 'applicationset-project-{{ print "{{projectId}}" }}'
     spec:
       project: default
       syncPolicy:
@@ -28,14 +28,14 @@ spec:
         repoURL: https://github.com/mperendija/gitops-testing.git
         targetRevision: tenant-projects-test
         # path to read manifests from, here it's the full path not only the name of the directory
-        path: 'project-template/{{ .Values.temp | default "{{type}}" }}'
+        path: 'project-template/{{ print "{{type}}" }}'
         # plugin:
         #   name: kustomize-build-with-helm
         helm:
           valueFiles:
             - 'values.yaml'
-            - '../../tenants/{{ .Values.temp | default "{{alias}}" }}/project-{{ .Values.temp | default "{{projectId}}" }}/values-over.yaml'
+            - '../../tenants/{{ print "{{alias}}" }}/project-{{ print "{{projectId}}" }}/values-over.yaml'
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
-        namespace: '{{ .Values.temp | default "{{alias}}" }}'
+        namespace: '{{ print "{{alias}}" }}'
