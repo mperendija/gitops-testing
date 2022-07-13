@@ -1,6 +1,3 @@
 {
-	"alias": "tenant1",
-	"name": "tenant1",
-	"templatePath": "tenant-template",
-	"valuesFile": "../tenants/tenant1/values-over.yaml"
+	"alias": "tenant1"
 }

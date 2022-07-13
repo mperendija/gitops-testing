@@ -13,11 +13,10 @@ spec:
       files:
       # path to the directory that includes directories to read as variables
       - path: tenants/**/config-tenant.json
-      - path: tenants/**/**/config-project.json
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: '{{name}}'
+      name: '{{alias}}'
     spec:
       project: default
       syncPolicy:
@@ -29,15 +28,13 @@ spec:
         repoURL: https://github.com/mperendija/gitops-testing.git
         targetRevision: tenant-projects-test
         # path to read manifests from, here it's the full path not only the name of the directory
-        path: '{{templatePath}}'
+        path: tenant-template
         # plugin:
         #   name: kustomize-build-with-helm
         helm:
           valueFiles:
             - "values.yaml"
-            - "{{valuesFile}}"
-#            - "../tenants/{{alias}}/values-over.yaml"
-#            - "../tenants/{{alias}}/project-{{projectId}}/values-over.yaml"
+            - "../tenants/{{alias}}/values-over.yaml"
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
