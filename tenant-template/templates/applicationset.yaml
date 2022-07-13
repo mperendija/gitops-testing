@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: wcc-emp-project-applicationset
+  name: wcc-emp-project-applicationset-{{ .Values.namespace }}
   namespace: argocd
 spec:
   generators:
@@ -12,11 +12,11 @@ spec:
       revision: tenant-projects-test
       files:
         # path to the directory that includes directories to read as variables
-        - path: tenants/**/**/config-project.json
+        - path: tenants/{{ .Values.namespace }}/**/config-project.json
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: 'applicationset-tenant'
+      name: 'applicationset-tenant-{{ .Values.temp | default "{{projectId}}'
     spec:
       project: default
       syncPolicy:
