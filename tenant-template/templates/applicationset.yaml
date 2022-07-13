@@ -28,14 +28,14 @@ spec:
         repoURL: https://github.com/mperendija/gitops-testing.git
         targetRevision: tenant-projects-test
         # path to read manifests from, here it's the full path not only the name of the directory
-        path: 'project-template/{{type}}'
+        path: 'project-template/{{ .Values.temp | default "{{type}}" }}'
         # plugin:
         #   name: kustomize-build-with-helm
         helm:
           valueFiles:
-            - "values.yaml"
-            - "../../tenants/{{alias}}/project-{{projectId}}/values-over.yaml"
+            - 'values.yaml'
+            - ''../../tenants/{{ .Values.temp | default "{{alias}}" }}/project-{{ .Values.temp | default "{{project}}" }}/values-over.yaml'
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
-        namespace: '{{alias}}'
+        namespace: '{{ .Values.temp | default "{{alias}}" }}'
