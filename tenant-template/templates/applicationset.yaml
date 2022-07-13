@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: 'applicationset-tenant-{{ .Values.temp | default "{{projectId}}" }}'
+      name: 'applicationset-project-{{ .Values.temp | default "{{projectId}}" }}'
     spec:
       project: default
       syncPolicy:
@@ -34,7 +34,7 @@ spec:
         helm:
           valueFiles:
             - 'values.yaml'
-            - '../../tenants/{{ .Values.temp | default "{{alias}}" }}/project-{{ .Values.temp | default "{{project}}" }}/values-over.yaml'
+            - '../../tenants/{{ .Values.temp | default "{{alias}}" }}/project-{{ .Values.temp | default "{{projectId}}" }}/values-over.yaml'
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
