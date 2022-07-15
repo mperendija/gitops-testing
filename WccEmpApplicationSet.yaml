@@ -9,7 +9,7 @@ spec:
       # git repository to get the variables from
       repoURL: https://github.com/mperendija/gitops-testing.git
       # branch used to get the variables from
-      revision: tenant-projects-test
+      revision: sub-module
       files:
       # path to the directory that includes directories to read as variables
       - path: tenants/**/config-tenant.json
@@ -26,15 +26,15 @@ spec:
       source:
         # source repo, in this example both repositories are the same
         repoURL: https://github.com/mperendija/gitops-testing.git
-        targetRevision: tenant-projects-test
+        targetRevision: sub-module
         # path to read manifests from, here it's the full path not only the name of the directory
-        path: tenant-template
+        path: argo-submodule/tenant-template
         # plugin:
         #   name: kustomize-build-with-helm
         helm:
           valueFiles:
             - "values.yaml"
-            - "../tenants/{{alias}}/values-over.yaml"
+            - "../../tenants/{{alias}}/values-over.yaml"
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
