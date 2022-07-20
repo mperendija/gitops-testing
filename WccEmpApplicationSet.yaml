@@ -35,7 +35,7 @@ spec:
           valueFiles:
             - 'values.yaml'
           values: |-
-            {{ print "{{values}}" }}
+            {{values}}
           #  - "../tenants/{{alias}}/values-over.yaml"
       destination:
         server: https://kubernetes.default.svc
