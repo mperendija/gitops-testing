@@ -18,7 +18,7 @@ spec:
       # basename is the name of the directory not the full path
       name: 'applicationset-project-{{ print "{{projectId}}" }}'
     spec:
-      project: default
+      project: tenants
       syncPolicy:
         automated:
           prune: true
