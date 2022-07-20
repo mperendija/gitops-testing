@@ -2,7 +2,7 @@ alias: "tenant2"
 projectId: "3"
 type: "dedupe"
 
-values:
+values: |
   namespace: tenant2
   name: project-3
 
