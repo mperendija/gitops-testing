@@ -8,4 +8,4 @@ values: |
   type: ep
 
   testmap:
-    testprop: CHARTWORKS_tenant1-project-2
+    testprop: CHARTWORKS_tenant1-project-2-changed
