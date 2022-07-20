@@ -8,3 +8,4 @@ values: |
 
   testmap:
     testprop: CHARTWORKS_tenant1-project-1-CHANGED
+    testsecond: PLEASEWORK
