@@ -1,0 +1,11 @@
+alias: "tenant1"
+projectId: "2"
+type: "ep"
+
+values:
+  namespace: tenant1
+  name: project-2
+  type: ep
+
+  testmap:
+    testprop: CHARTWORKS_tenant1-project-2

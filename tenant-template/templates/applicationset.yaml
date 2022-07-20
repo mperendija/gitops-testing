@@ -12,7 +12,7 @@ spec:
       revision: tenant-projects-test
       files:
         # path to the directory that includes directories to read as variables
-        - path: tenants/{{ .Values.namespace }}/**/config-project.json
+        - path: tenants/{{ .Values.namespace }}/**/config-project.yaml
   template:
     metadata:
       # basename is the name of the directory not the full path
@@ -34,7 +34,9 @@ spec:
         helm:
           valueFiles:
             - 'values.yaml'
-            - '../../tenants/{{ print "{{alias}}" }}/project-{{ print "{{projectId}}" }}/values-over.yaml'
+          values: |-
+            {{ print "{{values}}" }}
+        #    - '../../tenants/{{ print "{{alias}}" }}/project-{{ print "{{projectId}}" }}/values-over.yaml'
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations

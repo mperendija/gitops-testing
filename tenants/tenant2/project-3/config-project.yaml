@@ -1,0 +1,10 @@
+alias: "tenant2"
+projectId: "3"
+type: "dedupe"
+
+values:
+  namespace: tenant2
+  name: project-3
+
+  testmap:
+    testprop: CHARTWORKS_tenant2-project-3
