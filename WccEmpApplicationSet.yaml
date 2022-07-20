@@ -12,7 +12,7 @@ spec:
       revision: values-testing
       files:
       # path to the directory that includes directories to read as variables
-      - path: tenants/**/config-tenant.json
+      - path: tenants/**/config-tenant.yaml
   template:
     metadata:
       # basename is the name of the directory not the full path
@@ -25,16 +25,18 @@ spec:
           selfHeal: true
       source:
         # source repo, in this example both repositories are the same
-        repoURL: https://github.com/mperendija/gitops-testing.git
-        targetRevision: values-testing
+        repoURL: https://github.com/stufegdzic/argo-submodule.git
+        targetRevision: main
         # path to read manifests from, here it's the full path not only the name of the directory
         path: tenant-template
         # plugin:
         #   name: kustomize-build-with-helm
         helm:
           valueFiles:
-            - "values.yaml"
-            - "../tenants/{{alias}}/values-over.yaml"
+            - 'values.yaml'
+          values: |-
+            {{ print "{{values}}" }}
+          #  - "../tenants/{{alias}}/values-over.yaml"
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
