@@ -16,10 +16,10 @@ spec:
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: {{ print "{{alias}}" }}
+      name: {{ print "'{{alias}}'" }}
       labels:
-        namespace: {{ print "{{alias}}" }}
-      namespace: {{ print "{{alias}}" }}
+        namespace: {{ print "'{{alias}}'" }}
+      namespace: {{ print "'{{alias}}'" }}
     spec:
       project: tenants
       syncPolicy:
@@ -41,4 +41,4 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
-        namespace: {{ print "{{alias}}" }}
+        namespace: {{ print "'{{alias}}'" }}
