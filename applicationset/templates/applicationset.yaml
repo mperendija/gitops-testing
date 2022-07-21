@@ -9,7 +9,7 @@ spec:
       # git repository to get the variables from
       repoURL: https://github.com/mperendija/gitops-testing.git
       # branch used to get the variables from
-      revision: {{ .Values.tenants-repo-revision }}
+      revision: {{ .Values.tenantsRepoRevision }}
       files:
       # path to the directory that includes directories to read as variables
       - path: tenants/**/config-tenant.yaml
@@ -29,7 +29,7 @@ spec:
       source:
         # source repo, in this example both repositories are the same
         repoURL: https://github.com/stufegdzic/argo-submodule.git
-        targetRevision: {{ .Values.tenants-chart-revision }}
+        targetRevision: {{ .Values.tenantsChartRevision }}
         # path to read manifests from, here it's the full path not only the name of the directory
         helm:
           ignoreMissingValueFiles: true
