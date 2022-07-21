@@ -1,3 +1,3 @@
 env: dev01
 tenantsRepoRevision: codecommit-layout
-tenantsChartRevision: main
+tenantsChartRevision: master
