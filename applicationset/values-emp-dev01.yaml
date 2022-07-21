@@ -1,0 +1,3 @@
+env: dev01
+tenants-repo-revision: codecommit-layout
+tenants-chart-revision: main
