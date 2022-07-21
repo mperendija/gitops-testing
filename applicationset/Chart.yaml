@@ -1,6 +1,5 @@
 apiVersion: v2
 name: tenants-applicationset-chart
 description: Tenants applicationset chart
-type: application
 version: 0.1.0
 appVersion: 1.16.0
