@@ -7,5 +7,4 @@ values: |
   name: project-1
 
   testmap:
-    testprop: CHARTWORKS_tenant1-project-1-CHANGED
-    testsecond: PLEASEWORK
+    testprop: CHARTWORKS_tenant1-project-1-CHANGEDINVALUES
