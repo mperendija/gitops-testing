@@ -1,7 +1,0 @@
-alias: tenant4
-
-values: |
-  testmap:
-    testprop: CHARTWORKS_tenant4
-
-  namespace: tenant4
