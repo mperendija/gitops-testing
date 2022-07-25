@@ -1,0 +1,7 @@
+alias: tenant10
+
+values: |
+  testmap:
+    testprop: CHARTWORKS_tenant10
+
+  namespace: tenant10
